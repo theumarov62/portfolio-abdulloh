@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Element Mouse</title>
+    <style>
+      #cursor {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      .back__link {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        text-decoration: underline;
+        font-size: 20px;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        gap: 5px;
+      }
+
+      .back__link:hover {
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="back__link" href="../index.html"
+      ><svg
+        class="back__img"
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        fill="black"
+        viewBox="0 0 24 24"
+        stroke="black"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 19l-7-7 7-7M3 12h18"
+        />
+      </svg>
+      Orqaga</a
+    >
+    <img src="../images/cursor_img.png" alt="Cursor Img" id="cursor" />
+
+    <script>
+      const follower = document.getElementById("cursor");
+
+      document.addEventListener("mousemove", (e) => {
+        follower.style.left = e.pageX + "px";
+        follower.style.top = e.pageY + "px";
+      });
+    </script>
+  </body>
+</html>
